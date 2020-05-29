@@ -1,0 +1,119 @@
+
+/* 尺寸 */
+.size(@w,@h){
+    width: @w;
+    height: @h;
+}
+/* 方形 */
+.size-f(@w){
+    .size(@w,@w);
+}
+
+/* 弹性盒子 */
+.flex(@row:center,@col:center,@wrap:nowrap){
+    display: flex;
+    justify-content: @row;
+    align-items: @col;
+    flex-wrap: @wrap;
+}
+/* 竖向 */
+.flex-col(@row:center,@col:center,@wrap:nowrap){
+    display: flex;
+    flex-direction: column;
+    justify-content: @row;
+    align-items: @col;
+    flex-wrap: @wrap;
+}
+/* 绝对定位 */
+.absolute-lt(@left:0,@top:0,@z:1){
+    position: absolute;
+    left:@left;
+    top: @top;
+    z-index:@z;
+}
+.absolute-rt(@right:0,@top:0,@z:1){
+    position: absolute;
+    right:@right;
+    top: @top;
+    z-index:@z;
+}
+.absolute-rb(@right:0,@bottom:0,@z:1){
+    position: absolute;
+    right:@right;
+    bottom: @bottom;
+    z-index:@z;
+}
+.absolute-lb(@left:0,@bottom:0,@z:1){
+    position: absolute;
+    left:@left;
+    bottom: @bottom;
+    z-index:@z;
+}
+
+.border(@w:1rpx,@color:#efefef){
+    border:@w solid @color;
+}
+.border-l(@w:1rpx,@color:#efefef){
+    border-left:@w solid @color;
+}
+.border-t(@w:1rpx,@color:#efefef){
+    border-top:@w solid @color;
+}
+.border-r(@w:1rpx,@color:#efefef){
+    border-right:@w solid @color;
+}
+.border-b(@w:1rpx,@color:#efefef){
+    border-bottom:@w solid @color;
+}
+.radius(@ra:5rpx){
+    border-radius:@ra;
+}
+/* 固定定位 */
+.fixed(@l:0,@t:0,@z:1){
+    position: fixed;
+    left: @l;
+    top:@t;
+    z-index: @z;
+}
+.fixed-rt(@r:0,@t:0,@z:1){
+    position: fixed;
+    right:@r;
+    top:@t;
+    z-index: @z;
+}
+.fixed-lb(@l:0,@b:0,@z:1){
+    position: fixed;
+    left: @l;
+    bottom:@b;
+    z-index: @z;
+}
+.fixed-rb(@r:0,@b:0,@z:1){
+    position: fixed;
+    right:@r;
+    bottom:@b;
+    z-index: @z;
+}
+/* 字体 */
+.font(@size,@col:#333,@h:@size+4rpx){
+    font-size: @size;
+    color: @col;
+    line-height: @h;
+}
+
+/* 背景图片 */
+
+.bg-img(@url,@size:100% 100%,@position:left 0 top 0){
+    background-image: url('@{url}');
+    background-repeat:  no-repeat;
+    background-size: @size;
+    background-position: @position;
+}
+/* 文字超出显示 。。。 */
+
+.line(@n:1){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @n;
+    -webkit-box-orient: vertical;
+ }
